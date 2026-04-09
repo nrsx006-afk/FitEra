@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { background: #1a1a1a; height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .modal { background: white; padding: 30px; border-radius: 10px; width: 320px; text-align: center; }
+        h3 { margin-bottom: 20px; }
+        input { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .btn-black { background: black; color: white; border: none; padding: 10px; width: 100%; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <h3>เข้าสู่ระบบ</h3>
+        <input type="text" placeholder="User">
+        <input type="password" placeholder="Password">
+        <button class="btn-black" onclick="window.location.href='logged.html'">เข้าสู่ระบบ</button>
+    </div>
+</body>
+</html>

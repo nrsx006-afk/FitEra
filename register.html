@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { background: rgba(0,0,0,0.4); height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .modal { background: white; padding: 30px; border-radius: 15px; width: 350px; text-align: center; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        .btn { background: #5cb85c; color: white; border: none; padding: 10px; width: 100%; border-radius: 5px; cursor: pointer; }
+        .close { display: block; margin-top: 15px; text-decoration: none; color: #888; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <h3>สมัครสมาชิก</h3>
+        <input type="text" placeholder="อีเมล">
+        <input type="password" placeholder="รหัสผ่าน">
+        <button class="btn" onclick="location.href='index.html'">สมัครสมาชิก</button>
+        <a href="index.html" class="close">ปิด</a>
+    </div>
+</body>
+</html>

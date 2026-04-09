@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitEra - Admin Dashboard (Dark Theme)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS ส่วนกลาง */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5; /* พื้นหลังหน้าจอด้านนอกสีเทาอ่อน */
+            color: #333;
+        }
+
+        /* Header สีดำตามรูปตัวอย่าง */
+        .admin-header {
+            background-color: #1a1a1a; /* สีดำเข้ม */
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        /* ปุ่มออกจากระบบสีแดงเข้ม */
+        .logout-btn {
+            background-color: #a12d2d; /* สีแดงเข้ม */
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #b33939;
+        }
+
+        /* ส่วนเนื้อหาหลัก */
+        .main-content {
+            padding: 40px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* ปรับตามขนาดจอ */
+            gap: 25px;
+        }
+
+        /* สไตล์การ์ดเมนู (สีขาว-เทาอ่อน) */
+        .menu-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 180px;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* ส่วนหัวของการ์ด (ไอคอน + ชื่อ) */
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card-icon {
+            font-size: 1.2em; /* ขนาดไอคอน Emoji */
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* ปุ่มกดในการ์ดสีดำเข้ม */
+        .card-btn {
+            background-color: #1a1a1a; /* สีดำตามปุ่มในการ์ด */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            align-self: flex-start; /* ให้ปุ่มอยู่ชิดซ้าย */
+            transition: 0.3s;
+        }
+
+        .card-btn:hover {
+            background-color: #333;
+        }
+
+        /* ข้อความลิงก์ด้านล่าง */
+        .back-link-container {
+            text-align: center;
+            margin-top: 20px;
+            padding: 0 5%;
+        }
+
+        .back-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="header-title">Admin Dashboard</div>
+        <button class="logout-btn" onclick="location.href='index.html'">ออกจากระบบ</button>
+    </header>
+
+    <main class="main-content">
+        
+        <div class="menu-card">
+            <div>
+                <div class="card-header">
+                    <span class="card-icon">📦</span>
+                    <span class="card-title">จัดการสินค้า</span>
+                </div>
+                <p class="card-desc">เพิ่ม / ลบ / แก้ไขข้อมูลสินค้าในร้าน</p>
+            </div>
+           <button class="card-btn" onclick="location.href='checkout.html'">จัดการ</button>
+        </div>
+
+        <div class="menu-card">
+            <div>
+                <div class="card-header">
+                    <span class="card-icon">📄</span>
+                    <span class="card-title">คำสั่งซื้อ</span>
+                </div>
+                <p class="card-desc">ตรวจสอบและจัดการออเดอร์ของลูกค้า</p>
+            </div>
+           <button class="card-btn" onclick="location.href='order management.html'">ดูรายการ</button>
+        </div>
+
+        <div class="menu-card">
+            <div>
+                <div class="card-header">
+                    <span class="card-icon">🚚</span>
+                    <span class="card-title">การจัดส่ง</span>
+                </div>
+                <p class="card-desc">อัปเดตสถานะและข้อมูลการจัดส่ง</p>
+            </div>
+            <button class="card-btn" onclick="location.href='shipping.html'">จัดส่ง</button>
+        </div>
+
+        <div class="menu-card">
+            <div>
+                <div class="card-header">
+                    <span class="card-icon">📝</span>
+                    <span class="card-title">ใบเสร็จ</span>
+                </div>
+                <p class="card-desc">ออกใบเสร็จและประวัติการชำระเงิน</p>
+            </div>
+            <button class="card-btn" onclick="location.href='receipt m.html'">ออกใบเสร็จ</button>
+        </div>
+
+    </main>
+
+    <div class="back-link-container">
+        <a href="index.html" class="back-link">← กลับไปยังหน้าร้านค้า</a>
+    </div>
+
+</body>
+</html>

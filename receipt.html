@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ใบเสร็จรับเงิน - FinEra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { 
+            background-color: #f0f2f5; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .receipt-card {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            text-align: center;
+        }
+
+        /* ไอคอนติ๊กถูกสีเขียวด้านบน */
+        .success-icon {
+            width: 70px;
+            height: 70px;
+            background: #e8f5e9;
+            color: #2d7a4d;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            margin: 0 auto 20px;
+        }
+
+        h2 { color: #2d7a4d; margin-bottom: 10px; }
+        .order-id { color: #888; font-size: 14px; margin-bottom: 30px; }
+
+        /* ส่วนรายละเอียดใบเสร็จ */
+        .receipt-details {
+            text-align: left;
+            border-top: 1px dashed #ddd;
+            border-bottom: 1px dashed #ddd;
+            padding: 20px 0;
+            margin-bottom: 25px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .label { color: #777; }
+        .value { font-weight: 500; color: #333; }
+        .total-amount { font-size: 20px; color: #2d7a4d; font-weight: bold; }
+
+        /* ปุ่มต่างๆ */
+        .btn-group { display: flex; flex-direction: column; gap: 10px; }
+        
+        .btn-home {
+            background: #2d7a4d;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-print {
+            background: #f8f9fa;
+            color: #555;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .btn-home:hover { background: #23613d; }
+    </style>
+</head>
+<body>
+
+    <div class="receipt-card">
+        <div class="success-icon">✓</div>
+        <h2>ชำระเงินสำเร็จ!</h2>
+        <p class="order-id">หมายเลขคำสั่งซื้อ: #FN371799</p>
+
+        <div class="receipt-details">
+            <div class="detail-row">
+                <span class="label">วันที่สั่งซื้อ:</span>
+                <span class="value">9 เมษายน 2569</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">ชื่อผู้รับ:</span>
+                <span class="value">คุณพาม (Palm)</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">ช่องทางชำระเงิน:</span>
+                <span class="value">โอนผ่านธนาคาร</span>
+            </div>
+            <hr style="margin: 15px 0; border: none; border-top: 1px solid #eee;">
+            <div class="detail-row">
+                <span class="label">ยอดรวมสินค้า:</span>
+                <span class="value">฿780</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">ค่าจัดส่ง:</span>
+                <span class="value">฿50</span>
+            </div>
+            <div class="detail-row" style="margin-top: 10px;">
+                <span class="label" style="font-size: 16px; font-weight: bold;">ยอดรวมทั้งสิ้น:</span>
+                <span class="total-amount">฿830</span>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <a href="index.html" class="btn-home">กลับหน้าหลัก</a>
+            <button class="btn-print" onclick="window.print()">🖨️ พิมพ์ใบเสร็จ</button>
+        </div>
+    </div>
+
+</body>
+</html>

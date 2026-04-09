@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>FitEra - หน้าหลัก</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { background-color: #f8f9fa; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .logo { color: #2d7a4d; font-size: 24px; font-weight: bold; }
+        .nav-links a { text-decoration: none; color: #555; margin-left: 15px; font-size: 13px; }
+        .admin-btn { background: #ffe0b2; padding: 5px 12px; border-radius: 20px; color: #e65100 !important; }
+        .categories { padding: 20px 5%; display: flex; gap: 10px; }
+        .cat-btn { padding: 8px 20px; border-radius: 20px; border: 1px solid #ddd; background: white; cursor: pointer; }
+        .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 0 5% 40px; }
+        @media (max-width: 1000px) { .container { grid-template-columns: repeat(2, 1fr); } }
+        .product-card { background: white; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .product-card h3 { font-size: 14px; margin-bottom: 10px; height: 40px; }
+        .product-card img { width: 100%; height: 140px; object-fit: contain; margin-bottom: 15px; }
+        .price { font-weight: bold; font-size: 16px; margin-bottom: 15px; display: block; }
+        .btn-add { background: #4CAF50; color: white; border: none; padding: 8px; width: 100%; border-radius: 20px; cursor: pointer; }
+
+/* สไตล์ปุ่มปกติ */
+.cat-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s;
+}
+
+/* สไตล์เมื่อปุ่มถูกเลือก (Active) */
+.cat-btn.active {
+    background: #2d7a4d; /* สีเขียวเข้มแบบเดียวกับโลโก้ */
+    color: white;
+    border-color: #2d7a4d;
+    font-weight: bold;
+}
+
+
+
+/* Footer Styles */
+.main-footer {
+    background-color: #2d7a4d; /* สีเขียวเข้มตามรูปเป๊ะๆ */
+    color: white;
+    padding: 40px 5% 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    border-left: 4px solid #fff;
+    padding-left: 10px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.social-links {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    color: #a5d6a7;
+}
+
+/* ปรับแต่งหน้าจอเล็กลง */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+    .footer-column h3 {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">FitEra</div>
+        <div class="nav-links">
+            <a href="cart.html">🛒 (2)</a>
+            <a href="login.html">เข้าสู่ระบบ</a>
+            <a href="register.html">สมัครสมาชิก</a>
+            <a href="history.html">ประวัติสั่งซื้อ</a>
+            <a href="contact.html">ติดต่อเรา</a>
+            <a href="login.html" class="admin-btn">Admin</a>
+        </div>
+    </header>
+  <div class="categories">
+    <button class="cat-btn" onclick="location.href='index.html'">ทั้งหมด</button>
+    <button class="cat-btn" onclick="location.href='vitamin.html'">วิตามิน</button>
+    <button class="cat-btn active" onclick="location.href='beautiful.html'">ความงาม</button>
+    <button class="cat-btn" onclick="location.href='protein.html'">โปรตีน</button>
+</div>
+    <div class="container">
+        <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+
+  <div class="product-card">
+            <h3>ไลฟ์ มัลติวิตามิน วิตามินรวม</h3>
+            <img src="https://via.placeholder.com/150">
+            <span class="price">฿390</span>
+            <button class="btn-add" onclick="location.href='cart.html'">เพิ่มลงตะกร้า</button>
+        </div>
+    </div>
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>FitEra</h3>
+            <p>เรามุ่งมั่นที่จะมอบผลิตภัณฑ์เสริมอาหารที่มีคุณภาพดีที่สุดเพื่อสุขภาพและความงามของคุณ</p>
+            <div class="social-links">
+                <span>Facebook</span> | <span>Line</span> | <span>Instagram</span>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>เมนูแนะนำ</h3>
+            <ul>
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="contact.html">ติดต่อเรา</a></li>
+                <li><a href="history.html">เช็คสถานะการจัดส่ง</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>ติดต่อเรา</h3>
+            <p>📍 123 ถนนสุขุมวิท แขวงสำโรง สมุทรปราการ</p>
+            <p>📞 โทร: 080-154-xxxx</p>
+            <p>📧 อีเมล: contact@fitera.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 FitEra Health & Beauty. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>
